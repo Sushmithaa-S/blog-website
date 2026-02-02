@@ -1,0 +1,27 @@
+<%- include('partials/header.ejs') %>
+<form action="/save" method="POST">
+  
+<div class="viewport-container">
+  <div class="blog-card">
+    <div class="form-group">
+      <label for="title">Title</label>
+      <input type="text" name="title" id="title" placeholder="What is this blog called?">
+    </div>
+    <div class="form-group">
+      <label for="author">Author</label>
+      <input type="text" name="author" id="Author" placeholder="Enter Author's name">
+    </div>
+
+    <div class="form-group">
+      <label for="blog-content">Write your thoughts here.</label>
+      <textarea id="blog-content" name="content" placeholder="I would like to share...."></textarea>
+    </div>
+
+    <div class="button-wrapper">
+       <button type="submit">Save</button>
+    </div>
+  </div>
+</div>
+</form>
+
+<%- include('partials/footer.ejs') %>

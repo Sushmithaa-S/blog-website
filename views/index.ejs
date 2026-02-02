@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+
+<div class="page-wrapper">
+  <main class="content-area">
+    <div class="centered-container">
+      <div class="flex-item">
+        <p class="logo-text">Thought<span style="color:#A6B1E1">Spot.</span></p>
+        <p class="logo-text-p">Written from the mind, shared from the heart</p>
+      </div>
+      <div class="flex-item"><p style="font-size:18px;">A digital space where creative minds can express their feelings, ideas and opinions through thoughtfully curated blogs.</p></div>
+      <div class="flex-item">
+        <div class="button-flex">
+            <div><form action="/create" method="GET">
+            <button>Create a blog</button>
+            </form>
+            </div>
+            <div>
+            <form action="/view" method="GET">
+            <button>View all blogs</button>
+            </form>
+            </div>
+         </div>
+      </div>
+    </div>
+  </main>
+</div>
+
+
+<%- include('partials/footer.ejs') %>

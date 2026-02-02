@@ -1,0 +1,29 @@
+<%- include('partials/header.ejs') %>
+
+<div class="blog-card-view-wrapper">
+  <% blogData.forEach(blog => { %>
+    <div class="blog-card-view-item">
+      <div class="blog-card-view-content">
+        <p><strong>ID:</strong> <%= blog.id %></p><br>
+        <p><strong>Title:</strong> <%= blog.title %></p><br>
+        <p><strong>Author:</strong> <%= blog.author %></p>
+      </div>
+      
+      <div class="blog-card-view-actions">
+        <form action="/edit/<%= blog.id %>" method="GET">
+          <button type="submit" >edit</button>
+        </form>
+        <form action="/delete/<%= blog.id %>" method="POST">
+          <button type="submit" >delete</button>
+        </form>
+      </div>
+    </div>
+  <% }) %>
+
+  <% if (blogData.length === 0) { %>
+    <div class="blog-card-view-empty">
+      <p>No blogs found. Create one to see it here!</p>
+    </div>
+  <% } %>
+</div>
+<%- include('partials/footer.ejs') %>
