@@ -40,7 +40,6 @@ app.post("/save",(req,res)=>{
   blogs.push(newBlog);
   saveBlogs();
   res.redirect("/");
-  res.render("index.ejs");
 });
 
 app.get("/edit/:id", (req, res) => {
@@ -57,15 +56,14 @@ app.post("/edit/:id", (req, res) => {
   blog.author = req.body.author;
   blog.content = req.body.content;
   saveBlogs();
-  res.render("index.ejs");
+  res.redirect("/");
 });
 
 app.post("/delete/:id",(req,res)=>{
   const id= Number(req.params.id);
   blogs = blogs.filter(blog => blog.id !== id);
   saveBlogs();
-  res.redirect("/view");
-  res.render("view.ejs",{blogData:blogs});
+  res.redirect("/");
 });
 
 app.listen(port, ()=>{
